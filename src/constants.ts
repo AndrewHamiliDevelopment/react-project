@@ -1,0 +1,1 @@
+export const imageURL = import.meta.env.VITE_IMAGE_URL;

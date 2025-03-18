@@ -1,0 +1,19 @@
+version: "3.6"
+
+networks:
+  react-project-network:
+    driver: "bridge"
+
+services:
+  node:
+    build:
+      context: .
+      dockerfile: node.dockerfile
+      container_name: react-project
+      restart: always
+      command: npm run start
+      tty: false
+      ports:
+        - "3000:3000"
+      networks:
+        - react-project-network
